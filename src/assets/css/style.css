@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --light_grey: hsl(217, 12%, 63%);
+  --medium_grey: hsl(216, 12%, 25%);
+  --dark_blue: hsl(213, 19%, 18%);
+  --mid_dark_blue: hsl(216, 12%, 13%);
+  --very_dark_blue: hsl(216, 12%, 8%);
+  --form_margin: clamp(1.5rem, 6vw, 2rem);
+}
+
+* {
+  font-family: "Overpass", sans-serif;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--very_dark_blue);
+  color: var(--white);
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.main_container {
+  width: clamp(22rem, 88vw, 28rem);
+  background: radial-gradient(
+    circle at top,
+    var(--dark_blue),
+    var(--mid_dark_blue)
+  );
+  border-radius: clamp(1rem, 4vw, 2rem);
+  margin-inline: auto;
+}
+
+.message_box {
+  margin: 0;
+  line-height: 1.5rem;
+  color: var(--light_grey);
+}
+
+/* Rating */
+
+.rating .image_container {
+  margin: 0;
+}
+
+.rating img {
+  background-color: var(--medium_grey);
+  padding: clamp(0.8rem, 3.2vw, 1rem);
+  border-radius: 50%;
+  margin-left: clamp(1.8rem, 7.2vw, 2.1rem);
+  margin-top: clamp(1.8rem, 7.2vw, 2.1rem);
+  height: clamp(2.5rem, 10vw, 3.2rem);
+}
+
+.rating h1 {
+  font-size: clamp(1.5rem, 6vw, 1.7rem);
+  margin-inline: var(--form_margin);
+  margin-top: clamp(1rem, 4vw, 2rem);
+  margin-bottom: 0;
+}
+
+.rating .message_box {
+  margin-inline: var(--form_margin);
+  margin-top: clamp(0.8rem, 3.2rem, 1rem);
+  margin-bottom: clamp(1.6rem, 6.4vw, 1.9rem);
+  font-size: clamp(0.95rem, 4.2vw, 1rem);
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked ~ label {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+form {
+  display: flex;
+  margin-inline: var(--form_margin);
+  justify-content: space-between;
+}
+
+label {
+  display: flex;
+  width: clamp(2.8rem, 11.2vw, 3.3rem);
+  height: clamp(2.8rem, 11.2vw, 3.3rem);
+  font-size: clamp(0.9rem, 3.6vw, 1.1rem);
+  border-radius: 50%;
+  background-color: var(--medium_grey);
+  align-items: center;
+  justify-content: center;
+  color: var(--light_grey);
+  vertical-align: middle;
+  padding-top: 0.2rem;
+  transition: background-color 250ms, color 250ms;
+}
+
+label:hover {
+  background-color: var(--light_grey);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.btn {
+  width: 100%;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+  margin-inline: 0;
+  margin-top: clamp(1.6rem, 6.4vw, 2.2rem);
+  margin-bottom: clamp(2.2rem, 8.8vw, 2.2rem);
+  background-color: var(--orange);
+  border: none;
+  border-radius: 2rem;
+  letter-spacing: 0.2rem;
+  color: var(--white);
+  font-size: 0.9rem;
+  transition: background-color 250ms, color 250ms;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.button_container {
+  display: flex;
+  margin-inline: var(--form_margin);
+}
+
+/*Thank*/
+
+.thank .image_container {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thank img {
+  margin-top: clamp(2.5rem, 10vw, 3rem);
+  height: clamp(6.5rem, 26vw, 7.2rem);
+}
+
+.selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selection p {
+  display: inline-block;
+  background-color: var(--dark_blue);
+  color: var(--orange);
+  text-align: center;
+  border-radius: 1rem;
+  margin-inline: auto;
+  padding: 0.4rem 1rem;
+  padding-top: 0.5rem;
+  margin-top: clamp(1.5rem, 6vw, 2.1rem);
+  margin-bottom: 0;
+  font-size: clamp(0.9rem, 3.6vw, 1rem);
+}
+
+.thank h1 {
+  font-size: clamp(1.6rem, 6.4vw, 1.7rem);
+  text-align: center;
+  margin-top: clamp(1.6rem, 6.4vw, 2.3rem);
+  margin-bottom: 0;
+}
+
+.thank .message_box {
+  text-align: center;
+  padding-bottom: clamp(2.5rem, 10vw, 3.3rem);
+  margin-inline: clamp(1rem, 5.4vw, 2rem);
+  margin-top: 1rem;
+}
+
+.thank .message_box p {
+  margin: 0;
+  display: inline;
+}
+
+@media (min-width: 440px) {
+  .thank .message_box p:nth-child(2) {
+    display: block;
+    margin-inline: 1.3rem;
+  }
+}
